@@ -1,8 +1,4 @@
 import './style.css';
-import heavyrain from './heavy-rain.png';
-import snowImg from './snow.png';
-import sunImg from './sun.png';
-import windImg from './wind.png';
 async function getWeather(city){
    try{ const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=7PZK7NESG5BNWFATL985ALR72`;
     const dataJson=await  fetch(url);
@@ -49,22 +45,22 @@ btn.addEventListener('click',async (event)=>{
     `;
 if(data.icon.includes('rain')){
     const icon=document.getElementById('icon');
-    icon.innerHTML=`<img src='${heavyrain}' alt='rain photo'/>`;
+    icon.innerHTML=`<img src="https://openweathermap.org/img/wn/10d@2x.png" alt="rain photo"/>`;
     const body=document.querySelector('body');
     body.style.backgroundImage='url(https://i.pinimg.com/originals/94/db/fe/94dbfe24cb90b6d66c791ba1f6f72bc5.gif)';
 
 }else if(data.icon.includes('snow')){
     const icon=document.getElementById('icon');
-    icon.innerHTML=`<img src='${snowImg}' alt='snow photo'/>`;
+    icon.innerHTML=`<img src="https://openweathermap.org/img/wn/13d@2x.png" alt="snow photo"/>`;
 }else if(data.icon.includes('clear-day')){
     const icon=document.getElementById('icon');
-    icon.innerHTML=`<img src='${sunImg}' alt='sun photo'/>`;
+    icon.innerHTML=`<img src="https://openweathermap.org/img/wn/01d@2x.png" alt="sun photo"/>`;
 }else if(data.icon.includes('wind')){
     const icon=document.getElementById('icon');
-    icon.innerHTML=`<img src='${windImg}' alt='wind photo'/>`;
+    icon.innerHTML=`<img src="https://openweathermap.org/img/wn/50d@2x.png" alt="wind photo"/>`;
 }else if (data.icon.includes('cloud')){
     const icon=document.getElementById('icon');
-    icon.innerHTML=`<img src='${windImg}' alt='wind photo'/>`;
+    icon.innerHTML=`<img src="https://openweathermap.org/img/wn/03d@2x.png" alt="cloudy weather photo"/>`;
 }
 else{
     const icon=document.getElementById('icon');
